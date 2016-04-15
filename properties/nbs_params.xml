@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<ccOpts>
+		<nsample>2</nsample>
+		<nmf_type>nmf</nmf_type>
+		<cc_type>hard euclid</cc_type>
+		<filterInputs>true</filterInputs>
+		<smp_feat>0.9</smp_feat>
+		<K>[2, 3]</K>
+		<doSummarizeCCmatrix>1</doSummarizeCCmatrix>
+		<dis>true</dis>
+		<isNetwork>1</isNetwork>
+		<smp_ind>0.9</smp_ind>
+		<min_indiv>10</min_indiv>
+		<min_mutations>9</min_mutations>
+		<normalize_rows>1</normalize_rows>
+		<recalc_cc>1</recalc_cc>
+		<propV>0.5</propV>
+		<zoptions>
+			<tof>0.001</tof>
+			<max_iteration>1500</max_iteration>
+			<testTof>3</testTof>
+			<testTofFirst>5</testTofFirst>
+		</zoptions>
+	</ccOpts>
+	<return_data>
+		<propGeno_only>0</propGeno_only>
+		<propGeno_full>1</propGeno_full>
+		<propGeno_iter>0</propGeno_iter>
+		<hlist>1</hlist>
+		<wlist>0</wlist>
+		<cc_summary_matrix>0</cc_summary_matrix>
+		<cc_intrinsic_stats>0</cc_intrinsic_stats>
+	</return_data>
+	

@@ -1,0 +1,21 @@
+/* app css stylesheet */
+
+body {
+    padding-top: 0;
+}
+
+.parmeter {
+ 	text-align: right;
+ 	width: 40%;
+}
+
+.version {
+	text-align: center;
+	width: 100%;
+}
+
+.miniature{
+	font-weight:bold;
+ 	font-size:10px;
+}
+

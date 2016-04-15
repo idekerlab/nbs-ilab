@@ -1,0 +1,84 @@
+<style type="text/css">
+textarea {
+	font-family: monospace;
+	font-size: 12px;
+}
+</style>
+<script>
+	$("#dialog").dialog({
+		modal : true,
+		autoOpen : false,
+		closeOnEscape : true,
+		draggable : false
+	});
+</script>
+
+<treasure-overlay-spinner active='spinner.active'>
+	<div ng-controller="FormSubmitController">
+		<form name='nbsParamsForm'>
+			<table class="table table-striped">
+				<tbody class="table-bordered">
+					<tr>
+						<td class="parmeter">Service</td>
+						<td>:</td><td><b>{{form.projectName}}</b></td><td></td>
+					</tr>
+					<tr>
+						<td class="parmeter">Description</td>
+						<td>:</td><td colspan=2>{{form.projectDescription}}</td><td></td>
+					</tr>
+					<tr>
+						<td class="parmeter">Patient File</td>
+						<td>:</td><td><input type="file" value="patient" id="file1" fileread="patientFile" /></td>
+						<td class="parmeter miniature">Default: <br> {{form.patientFileName}}</td>
+					</tr>
+					<tr>
+						<td class="parmeter">Network File</td>
+						<td>:</td>
+						<td>
+						<uib-tabset>
+		   		 			<uib-tab heading="Upload File..." select="setNetwork('type_file')">
+		   		 				<p><div class="well well-sm" style="margin-bottom:0px">
+		  		 					<input type="file" value="network" id="file2" fileread="networkFile"/>
+			 					</div>
+			 				</uib-tab>
+		   		 			<uib-tab heading="Use NDex ID..." select="setNetwork('type_ndex')">
+		   		 				<p><div class="well well-sm" style="margin-bottom:0px">NDex ID : 
+				 					<input type="text" ng-model="form.networkResourceName" value={{form.networkResourceName}} style="width: 200px;"required placeholder="Enter NDex ID" spellcheck='false'>
+	  		 					</div>
+		   		 			</uib-tab>
+			 			</uib-tabset>
+		  		 		</td>
+		 		 		<td class="parmeter miniature">Default: <br> {{form.networkFileName}}</td>
+					</tr>
+					<tr>
+						<td class="parmeter">Params</td>
+						<td>:</td>
+						<td><textarea id="t1" class="txt" rows="15" cols="40" maxlength="4000" spellcheck='false' ng-model="form.paramTextBlock" value={{form.paramTextBlock}}></textarea></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="parmeter">Job Name</td>
+						<td>:</td><td><input type="text" placeholder="Enter Job Name" ng-model="form.jobName" spellcheck='false' required></td>
+					</tr>
+					<tr>
+						<td class="parmeter">Email Results to</td>
+						<td>:</td><td><input type="email" placeholder="Enter email address" ng-model="form.emailAddress" required></td>
+						<td><button ng-disabled="!nbsParamsForm.$valid" ng-click="runProgram(form)">Submit</button></td>
+					</tr>
+					<tr><td colspan=4><hr></td></tr>
+					<tr>
+						<td colspan=4><div class="version miniature"><span app-copyright></span></div></td>
+					</tr>
+					<tr>
+						<td colspan=4><div class="version miniature">Version: <span app-version></span></div></td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="dialog" style="min-height: 52px;" title="NBS">
+				<div id="diaTxt"></div>
+			</div>
+		</form>
+	</div>
+</treasure-overlay-spinner>
+
+
